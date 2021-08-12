@@ -7,24 +7,24 @@ const Stack = createNativeStackNavigator();
 const StackNav = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="Home" // 적용 O
       screenOptions={{
         cardStyle: {backgroundColor: '#ffffff'}, // 적용 X
         headerStyle: {
           heigth: 200, // 적용 X
-          backgroundColor: '#555555',
+          backgroundColor: '#555555', // 적용 O
           borderBottomWidth: 5, // 적용 X
           borderBottomColor: '#111111', // 적용 X
         },
         headerTitleStyle: {
-          fontSize: 24,
-          color: '#ffffff',
+          fontSize: 24, // 적용 O
+          color: '#ffffff', // 적용 O
         },
         headerTitleAlign: 'center', // 적용 X
-        // headerTitle: (props) => {
-        //   console.log(props); // 로그: {"children": "Home", "tintColor": "rgb(28, 28, 30)"}
-        //   return null;
-        // },
+        headerBackTitle: 'Prev', // 적용 X - Only supported on iOS.
+        headerBackTitleVisible: true, // 적용 X - Only supported on iOS.
+        headerBackTitleStyle: {fontSize: 26}, // 적용 X - Only supported on iOS.
+        headerTintColor: '#ff6600', // 적용 O
       }}>
       <Stack.Screen
         name="Home"
