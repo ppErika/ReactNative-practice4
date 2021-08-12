@@ -13,11 +13,18 @@ const StyledText = styled.Text`
   margin: 10px;
 `;
 
-const Chat = () => {
+const Chat = ({navigation, route}) => {
   return (
     <Container>
       <StyledText>Chat</StyledText>
-      <Button title="Home" />
+      <StyledText>{route.params.id}</StyledText>
+      <StyledText>{route.params.name}</StyledText>
+      <Button
+        title="Home"
+        onPress={() =>
+          navigation.reset({routes: [{name: 'Home'}, {name: 'List'}]})
+        }
+      />
     </Container>
   );
 };
