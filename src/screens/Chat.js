@@ -21,9 +21,7 @@ const Chat = ({navigation, route}) => {
       <StyledText>{route.params.name}</StyledText>
       <Button
         title="Home"
-        onPress={() =>
-          navigation.reset({routes: [{name: 'Home'}, {name: 'List'}]})
-        }
+        onPress={() => navigation.reset({routes: [{name: 'Home'}]})}
       />
     </Container>
   );
