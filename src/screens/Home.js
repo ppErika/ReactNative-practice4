@@ -11,11 +11,11 @@ const StyledText = styled.Text`
   margin: 10px;
 `;
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <Container>
       <StyledText>Home</StyledText>
-      <Button title="List" />
+      <Button title="List" onPress={() => navigation.navigate('List')} />
     </Container>
   );
 };
