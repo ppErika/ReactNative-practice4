@@ -9,8 +9,22 @@ const StackNav = () => {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
-        // 지금 이 코드가 안먹는데 이유를 모르겠네 정말
-        cardStyle: {backgroundColor: '#ffffff'},
+        cardStyle: {backgroundColor: '#ffffff'}, // 적용 X
+        headerStyle: {
+          heigth: 200, // 적용 X
+          backgroundColor: '#555555',
+          borderBottomWidth: 5, // 적용 X
+          borderBottomColor: '#111111', // 적용 X
+        },
+        headerTitleStyle: {
+          fontSize: 24,
+          color: '#ffffff',
+        },
+        headerTitleAlign: 'center', // 적용 X
+        // headerTitle: (props) => {
+        //   console.log(props); // 로그: {"children": "Home", "tintColor": "rgb(28, 28, 30)"}
+        //   return null;
+        // },
       }}>
       <Stack.Screen
         name="Home"
