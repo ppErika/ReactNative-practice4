@@ -18,7 +18,11 @@ const StackNav = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen name="List" component={List} />
-      <Stack.Screen name="Chat" component={Chat} />
+      <Stack.Screen
+        name="Chat"
+        component={Chat}
+        options={{headerTitle: 'Chat Screen'}}
+      />
     </Stack.Navigator>
   );
 };
