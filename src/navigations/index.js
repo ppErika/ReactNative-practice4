@@ -6,8 +6,8 @@ import TabNav from './Tab';
 const Navigation = () => {
   return (
     <NavigationContainer>
-      {/* <StackNav /> */}
-      <TabNav />
+      <StackNav />
+      {/* <TabNav /> */}
     </NavigationContainer>
   );
 };

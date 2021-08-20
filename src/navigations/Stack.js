@@ -1,31 +1,35 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import {Home, List, Chat} from '../screens';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const StackNav = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Home" // 적용 O
-      screenOptions={{
-        cardStyle: {backgroundColor: '#ffffff'}, // 적용 X
+      initialRouteName="Home"
+      screenOptions={({route, navigation}) => ({
+        headerShown: false,
+        ...TransitionPresets.SlideFromRightAndroid,
+        cardStyle: {backgroundColor: '#ffffff'},
+
+        // 아래 헤더를 살리기 위해 다시 알아보자
         headerStyle: {
-          heigth: 200, // 적용 X
-          backgroundColor: '#555555', // 적용 O
-          borderBottomWidth: 5, // 적용 X
-          borderBottomColor: '#111111', // 적용 X
+          heigth: 200,
+          backgroundColor: '#555555',
+          borderBottomWidth: 5,
+          borderBottomColor: '#111111',
         },
         headerTitleStyle: {
-          fontSize: 24, // 적용 O
-          color: '#ffffff', // 적용 O
+          fontSize: 24,
+          color: '#ffffff',
         },
-        headerTitleAlign: 'center', // 적용 X
-        headerBackTitle: 'Prev', // 적용 X - Only supported on iOS.
-        headerBackTitleVisible: true, // 적용 X - Only supported on iOS.
-        headerBackTitleStyle: {fontSize: 26}, // 적용 X - Only supported on iOS.
-        headerTintColor: '#ff6600', // 적용 O
-      }}>
+        headerTitleAlign: 'center',
+        headerBackTitle: 'Prev', // Only supported on iOS.
+        headerBackTitleVisible: true, // Only supported on iOS.
+        headerBackTitleStyle: {fontSize: 26}, // Only supported on iOS.
+        headerTintColor: '#ff6600',
+      })}>
       <Stack.Screen
         name="Home"
         component={Home}
